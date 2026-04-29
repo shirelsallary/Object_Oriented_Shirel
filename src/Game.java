@@ -5,7 +5,7 @@ import java.awt.Color;
 
 /**
  * @author Shirel Sallary
- * The Game class holds the sprites and the environment, and is in charge of the animation.
+ * The Game class manages the game flow, sprites, and listeners.
  */
 public class Game {
     private SpriteCollection sprites;
@@ -13,9 +13,17 @@ public class Game {
     private GUI gui;
     private Sleeper sleeper;
 
+    // Counters for game management
+    private Counter remainingBlocks;
+    private Counter remainingBalls;
+    private Counter score;
+
     public Game() {
         this.sprites = new SpriteCollection();
         this.environment = new GameEnvironment();
+        this.remainingBlocks = new Counter(0);
+        this.remainingBalls = new Counter(0);
+        this.score = new Counter(0);
     }
 
     public void addCollidable(Collidable c) {
@@ -26,42 +34,82 @@ public class Game {
         this.sprites.addSprite(s);
     }
 
+    // Methods to remove objects from the game
+    public void removeCollidable(Collidable c) {
+        this.environment.removeCollidable(c);
+    }
+
+    public void removeSprite(Sprite s) {
+        this.sprites.removeSprite(s);
+    }
+
     /**
-     * Initialize a new game: create the Blocks and Ball (and Paddle)
-     * and add them to the game.
+     * Initialize a new game: create the Blocks, Ball, Paddle and Listeners.
      */
     public void initialize() {
         this.gui = new GUI("Arkanoid - Shirel Sallary", 800, 600);
         this.sleeper = new Sleeper();
 
-        // 1. יצירת כדור
-        Ball ball = new Ball(new Point(400, 300), 5, Color.BLUE, this.environment);
-        ball.setVelocity(Velocity.fromAngleAndSpeed(0, 5));
-        ball.addToGame(this);
+        // 1. Add Score Indicator
+        ScoreIndicator scoreIndicator = new ScoreIndicator(this.score);
+        scoreIndicator.addToGame(this);
 
-        // 2. יצירת פאדל (המחבט)
-        // שימי לב: הוא משתמש ב-KeyboardSensor של ה-GUI שיצרנו
+        // 2. Create Listeners
+        BlockRemover blockRemover = new BlockRemover(this, this.remainingBlocks);
+        BallRemover ballRemover = new BallRemover(this, this.remainingBalls);
+        ScoreTrackingListener scoreListener = new ScoreTrackingListener(this.score);
+
+        // 3. Create Borders and Death Region
+        this.createBorders(ballRemover);
+
+        // 4. Create Blocks in a pattern
+        this.createBlocksGrid(blockRemover, scoreListener);
+
+        // 5. Create Balls
+        this.createBalls();
+
+        // 6. Create Paddle
         Rectangle paddleRect = new Rectangle(new Point(350, 560), 100, 20);
         Paddle paddle = new Paddle(paddleRect, Color.ORANGE, gui.getKeyboardSensor());
         paddle.addToGame(this);
-
-        // 3. יצירת גבולות (קירות)
-// קיר עליון - נשאר אותו דבר
-        Block topWall = new Block(new Rectangle(new Point(0, 0), 800, 20), Color.GRAY);
-        topWall.addToGame(this);
-
-// קיר שמאלי - חייב להתחיל ב-X=0!
-        Block leftWall = new Block(new Rectangle(new Point(0, 0), 20, 600), Color.GRAY);
-        leftWall.addToGame(this);
-
-// קיר ימני - מתחיל ב-780 (כדי שעובי של 20 יכנס בתוך ה-800)
-        Block rightWall = new Block(new Rectangle(new Point(780, 0), 20, 600), Color.GRAY);
-        rightWall.addToGame(this);
     }
 
-    /**
-     * Run the game -- start the animation loop.
-     */
+    private void createBorders(BallRemover ballRemover) {
+        int wallSize = 20;
+        // Top, Left, Right walls (normal blocks)
+        new Block(new Rectangle(new Point(0, 20), 800, wallSize), Color.GRAY).addToGame(this);
+        new Block(new Rectangle(new Point(0, 20), wallSize, 600), Color.GRAY).addToGame(this);
+        new Block(new Rectangle(new Point(780, 20), wallSize, 600), Color.GRAY).addToGame(this);
+
+        // Bottom wall - The DEATH REGION
+        Block deathRegion = new Block(new Rectangle(new Point(0, 600), 800, wallSize), Color.GRAY);
+        deathRegion.addHitListener(ballRemover);
+        deathRegion.addToGame(this);
+    }
+
+    private void createBlocksGrid(BlockRemover br, ScoreTrackingListener sl) {
+        // Create 6 rows of blocks
+        Color[] colors = {Color.GRAY, Color.RED, Color.YELLOW, Color.BLUE, Color.PINK, Color.GREEN};
+        for (int row = 0; row < 6; row++) {
+            for (int col = 0; col < 12; col++) {
+                Block b = new Block(new Rectangle(new Point(780 - (col + 1) * 50, 100 + row * 20), 50, 20), colors[row]);
+                b.addToGame(this);
+                b.addHitListener(br); // Notifies remover when hit
+                b.addHitListener(sl); // Notifies score listener when hit
+                this.remainingBlocks.increase(1);
+            }
+        }
+    }
+
+    private void createBalls() {
+        for (int i = 0; i < 3; i++) {
+            Ball ball = new Ball(new Point(400, 500), 5, Color.WHITE, this.environment);
+            ball.setVelocity(Velocity.fromAngleAndSpeed(40 + (i * 20), 5));
+            ball.addToGame(this);
+            this.remainingBalls.increase(1);
+        }
+    }
+
     public void run() {
         int framesPerSecond = 60;
         int millisecondsPerFrame = 1000 / framesPerSecond;
@@ -70,14 +118,33 @@ public class Game {
             long startTime = System.currentTimeMillis();
 
             DrawSurface d = gui.getDrawSurface();
+            this.sprites.notifyAllTimePassed();
             this.sprites.drawAllOn(d);
             gui.show(d);
-            this.sprites.notifyAllTimePassed();
+
+            // Game Over Conditions
+            if (this.remainingBlocks.getValue() == 0) {
+                this.score.increase(100); // Bonus for clearing all blocks
+
+                // הדפסת הודעת ניצחון
+                System.out.println("You Win! Final Score: " + this.score.getValue());
+
+                gui.close();
+                return;
+            }
+
+            if (this.remainingBalls.getValue() == 0) {
+                // הדפסת הודעת הפסד
+                System.out.println("Game Over. Final Score: " + this.score.getValue());
+
+                gui.close();
+                return;
+            }
 
             long usedTime = System.currentTimeMillis() - startTime;
-            long milliSecondLeftToSleep = millisecondsPerFrame - usedTime;
-            if (milliSecondLeftToSleep > 0) {
-                sleeper.sleepFor(milliSecondLeftToSleep);
+            long sleepTime = millisecondsPerFrame - usedTime;
+            if (sleepTime > 0) {
+                this.sleeper.sleepFor(sleepTime);
             }
         }
     }

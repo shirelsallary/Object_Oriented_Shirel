@@ -81,7 +81,7 @@ public class Ball implements Sprite {
             this.center = new Point(info.collisionPoint().getX() + moveBackX,
                     info.collisionPoint().getY() + moveBackY);
 
-            this.velocity = info.collisionObject().hit(info.collisionPoint(), this.velocity);
+            this.velocity = info.collisionObject().hit(this, info.collisionPoint(), this.velocity);
         }
     }
 
@@ -101,5 +101,9 @@ public class Ball implements Sprite {
 
     public void addToGame(Game g) {
         g.addSprite(this);
+    }
+
+    public void removeFromGame(Game game) {
+        game.removeSprite(this);
     }
 }

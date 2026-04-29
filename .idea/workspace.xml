@@ -4,23 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0eb8252e-fd67-4df4-819a-c4e2998e2617" name="Changes" comment="first part">
-      <change afterPath="$PROJECT_DIR$/src/Block.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Collidable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CollisionInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GameEnvironment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Paddle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Rectangle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Sprite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SpriteCollection.java" afterDir="false" />
+    <list default="true" id="0eb8252e-fd67-4df4-819a-c4e2998e2617" name="Changes" comment="Second part">
+      <change afterPath="$PROJECT_DIR$/src/BallRemover.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BlockRemover.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Counter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HitListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HitNotifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ScoreIndicator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ScoreTrackingListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ball.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BallsTest1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BallsTest1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BouncingBallAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BouncingBallAnimation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Line.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Line.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MultipleBouncingBallsAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MultipleBouncingBallsAnimation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MultipleFramesBouncingBallsAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MultipleFramesBouncingBallsAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Collidable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Collidable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEnvironment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEnvironment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Paddle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paddle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SpriteCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SpriteCollection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Velocity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Velocity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +121,7 @@
       <workItem from="1773666898723" duration="1241000" />
       <workItem from="1777208661431" duration="3203000" />
       <workItem from="1777395461188" duration="16000" />
-      <workItem from="1777402485683" duration="5389000" />
+      <workItem from="1777402485683" duration="8442000" />
     </task>
     <task id="LOCAL‎-00001" summary="first part">
       <option name="closed" value="true" />
@@ -132,7 +131,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1763078250585</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL‎-00002" summary="Second part">
+      <option name="closed" value="true" />
+      <created>1777452110958</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL‎-00002" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1777452110958</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +158,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first part" />
-    <option name="LAST_COMMIT_MESSAGE" value="first part" />
+    <MESSAGE value="Second part" />
+    <option name="LAST_COMMIT_MESSAGE" value="Second part" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

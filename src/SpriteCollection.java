@@ -16,7 +16,9 @@ public class SpriteCollection {
     public void addSprite(Sprite s) {
         this.sprites.add(s);
     }
-
+    public void removeSprite(Sprite s) {
+        this.sprites.remove(s);
+    }
     /**
      * Call timePassed() on all sprites.
      */

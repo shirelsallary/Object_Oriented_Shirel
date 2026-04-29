@@ -20,10 +20,11 @@ public class Velocity {
 
 
     public static Velocity fromAngleAndSpeed(double angle, double speed) {
-        // המרה למערכת הצירים של Arkanoid (0 למעלה) ורדיאנים
-        double radians = Math.toRadians(angle - 90);
-        double dx = speed * Math.cos(radians);
-        double dy = speed * Math.sin(radians);
+        // המרה לרדיאנים
+        double radians = Math.toRadians(angle);
+        // חישוב הרכיבים: sin עבור X ו-cos (שלילי) עבור Y
+        double dx = speed * Math.sin(radians);
+        double dy = -speed * Math.cos(radians); // מינוס כי ב-GUI ציר Y הפוך
         return new Velocity(dx, dy);
     }
 

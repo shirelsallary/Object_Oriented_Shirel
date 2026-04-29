@@ -1,13 +1,16 @@
 import biuoop.DrawSurface;
 import java.awt.Color;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Shirel Sallary
  * A Block is a rectangular obstacle on the screen.
  */
-public class Block implements Collidable, Sprite {
+public class Block implements Collidable, Sprite,HitNotifier {
     private Rectangle rect;
     private Color color;
+    private List<HitListener> hitListeners;
 
     /**
      * Constructor for Block.
@@ -17,6 +20,7 @@ public class Block implements Collidable, Sprite {
     public Block(Rectangle rect, Color color) {
         this.rect = rect;
         this.color = color;
+        this.hitListeners = new ArrayList<>();
     }
 
     /**
@@ -27,34 +31,7 @@ public class Block implements Collidable, Sprite {
         return this.rect;
     }
 
-    /**
-     * Logic for changing velocity upon hit.
-     * If hit on vertical edges, horizontal direction flips.
-     * If hit on horizontal edges, vertical direction flips.
-     */
-    @Override
-    public Velocity hit(Point collisionPoint, Velocity currentVelocity) {
-        double dx = currentVelocity.getDx();
-        double dy = currentVelocity.getDy();
 
-        // Check horizontal boundaries (left and right edges)
-        if (Math.abs(collisionPoint.getX() - rect.getUpperLeft().getX()) < 1E-10 ||
-                Math.abs(collisionPoint.getX() - (rect.getUpperLeft().getX() + rect.getWidth())) < 1E-10) {
-            dx = -dx;
-        }
-
-        // Check vertical boundaries (top and bottom edges)
-        if (Math.abs(collisionPoint.getY() - rect.getUpperLeft().getY()) < 1E-10 ||
-                Math.abs(collisionPoint.getY() - (rect.getUpperLeft().getY() + rect.getHeight())) < 1E-10) {
-            dy = -dy;
-        }
-
-        return new Velocity(dx, dy);
-    }
-
-    /**
-     * Draws the block on the given DrawSurface.
-     */
     @Override
     public void drawOn(DrawSurface d) {
         d.setColor(this.color);
@@ -77,5 +54,71 @@ public class Block implements Collidable, Sprite {
     public void addToGame(Game g) {
         g.addSprite(this);
         g.addCollidable(this);
+    }
+
+    @Override
+    public void addHitListener(HitListener hl) {
+        this.hitListeners.add(hl);
+    }
+
+    @Override
+    public void removeHitListener(HitListener hl) {
+        this.hitListeners.remove(hl);
+    }
+
+    // Method to notify all listeners about a hit
+    private void notifyHit(Ball hitter) {
+        // Make a copy of the hitListeners before iterating over them.
+        List<HitListener> listeners = new ArrayList<>(this.hitListeners);
+        for (HitListener hl : listeners) {
+            hl.hitEvent(this, hitter);
+        }
+    }
+
+    /**
+     * Logic for changing velocity upon hit and notifying listeners.
+     * @param hitter the ball that hit the block.
+     * @param collisionPoint the point where the hit occurred.
+     * @param currentVelocity the velocity of the ball before the hit.
+     * @return the new velocity after the hit.
+     */
+    @Override
+    public Velocity hit(Ball hitter, Point collisionPoint, Velocity currentVelocity) {
+        // 1. לוקחים את המהירות הנוכחית
+        double dx = currentVelocity.getDx();
+        double dy = currentVelocity.getDy();
+
+        // 2. הלוגיקה הפיזיקלית הקיימת שלך: בדיקת פגיעה בדפנות הבלוק
+
+        // בדיקת פגיעה בצדדים (שמאל או ימין) - הופכים את ה-dx
+        if (Math.abs(collisionPoint.getX() - rect.getUpperLeft().getX()) < 1E-10 ||
+                Math.abs(collisionPoint.getX() - (rect.getUpperLeft().getX() + rect.getWidth())) < 1E-10) {
+            dx = -dx;
+        }
+
+        // בדיקת פגיעה למעלה או למטה - הופכים את ה-dy
+        if (Math.abs(collisionPoint.getY() - rect.getUpperLeft().getY()) < 1E-10 ||
+                Math.abs(collisionPoint.getY() - (rect.getUpperLeft().getY() + rect.getHeight())) < 1E-10) {
+            dy = -dy;
+        }
+
+        // 3. יצירת אובייקט המהירות החדש
+        Velocity newVelocity = new Velocity(dx, dy);
+
+        // 4. הדבר החדש: שליחת הודעה לכל המאזינים שקרתה פגיעה
+        // אנחנו מעבירים להם את הכדור שפגע (hitter) ואת הבלוק הנוכחי (this)
+        this.notifyHit(hitter);
+
+        // 5. מחזירים את המהירות החדשה למנוע של המשחק
+        return newVelocity;
+    }
+
+    /**
+     * Removes this block from the game.
+     * @param game the game to remove from.
+     */
+    public void removeFromGame(Game game) {
+        game.removeCollidable(this);
+        game.removeSprite(this);
     }
 }

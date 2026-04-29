@@ -7,11 +7,7 @@ public interface Collidable {
      */
     Rectangle getCollisionRectangle();
 
-    /**
-     * Notify the object that we collided with it at collisionPoint with a given velocity.
-     * @param collisionPoint The point where the collision occurred.
-     * @param currentVelocity The velocity of the object that hit the collidable.
-     * @return The new velocity expected after the hit.
-     */
-    Velocity hit(Point collisionPoint, Velocity currentVelocity);
+
+    // בתוך Collidable.java
+    Velocity hit(Ball hitter, Point collisionPoint, Velocity currentVelocity);
 }

@@ -53,7 +53,7 @@ public class Paddle implements Sprite, Collidable {
     }
 
     @Override
-    public Velocity hit(Point collisionPoint, Velocity currentVelocity) {
+    public Velocity hit(Ball hitter, Point collisionPoint, Velocity currentVelocity) {
         // היפוך פשוט של המהירות האנכית
         return new Velocity(currentVelocity.getDx(), -currentVelocity.getDy());
     }
