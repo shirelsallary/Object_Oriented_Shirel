@@ -7,21 +7,23 @@ public class Velocity {
         x = dx;
         y = dy;
     }
-     public double getX(){ return x; }
-    public double getY(){ return y; }
-    public void setX(double x){ this.x = x; }
-    public void setY(double y){ this.y = y; }
+     public double getDx(){ return x; }
+    public double getDy(){ return y; }
+    public void setDx(double x){ this.x = x; }
+    public void setDy(double y){ this.y = y; }
 
     // Take a point with position (x,y) and return a new point
     // with position (x+dx, y+dy)
     public Point applyToPoint(Point p){
-        return new Point(p.getX()+this.getX(), p.getY()+this.getY() );
+        return new Point(p.getX()+this.getDx(), p.getY()+this.getDy() );
     }
 
 
     public static Velocity fromAngleAndSpeed(double angle, double speed) {
-        double dx = speed * Math.cos(angle);
-        double dy = speed * Math.sin(angle);
+        // המרה למערכת הצירים של Arkanoid (0 למעלה) ורדיאנים
+        double radians = Math.toRadians(angle - 90);
+        double dx = speed * Math.cos(radians);
+        double dy = speed * Math.sin(radians);
         return new Velocity(dx, dy);
     }
 

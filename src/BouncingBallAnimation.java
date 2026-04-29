@@ -8,8 +8,7 @@ public class BouncingBallAnimation {
     static private void drawAnimation(Point start, double dx, double dy) {
         GUI gui = new GUI("title",200,200);
         Sleeper sleeper = new Sleeper();
-        Ball ball = new Ball(start.getX(), start.getY(), 30, java.awt.Color.BLACK);
-        ball.setVelocity(dx, dy);
+        Ball ball = new Ball(start.getX(), start.getY(), 30, java.awt.Color.BLACK);        ball.setVelocity(dx, dy);
         while (true) {
             ball.moveOneStep();
             DrawSurface d = gui.getDrawSurface();

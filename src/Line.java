@@ -56,45 +56,51 @@ public class Line {
     // Returns the intersection point if the lines intersect,
     // and null otherwise.
     public Point intersectionWith(Line other) {
-       Point empty=null;
-        if(this.equals(other)) {return this.start;}//same line
-        if( this.start.getX()==this.end.getX()
-                && other.start.getX()==this.end.getX()) {return empty;}// both parallel to Y
-        if( this.start.getX()!=this.end.getX()
-                && other.start.getX()!=this.end.getX())//both are not parallel to Y
-        {
-            double m1=this.gradient();
-            double m2=other.gradient();
-            double b1 =(this.start.getY()) -m1*this.start.getX();
-            double b2 =(other.start.getY()) -m2*other.start.getX();
-            double xCut=(b2-b1)/(m1-m2);
-            double yCut=m1*xCut+b1;
-            Point cutPoint=new Point(xCut,yCut);
-            if ( ( cutPoint.inRange(this.start,this.end) )&& (cutPoint.inRange(other.start,other.end)))
-                return cutPoint;
-            return empty;
+        double x1 = this.start.getX(), y1 = this.start.getY();
+        double x2 = this.end.getX(), y2 = this.end.getY();
+        double x3 = other.start.getX(), y3 = other.start.getY();
+        double x4 = other.end.getX(), y4 = other.end.getY();
+
+        double denominator = (y4 - y3) * (x2 - x1) - (x4 - x3) * (y2 - y1);
+        if (denominator == 0) return null;
+
+        double ua = ((x4 - x3) * (y1 - y3) - (y4 - y3) * (x1 - x3)) / denominator;
+        double ub = ((x2 - x1) * (y1 - y3) - (y2 - y1) * (x1 - x3)) / denominator;
+
+        if (ua >= 0 && ua <= 1 && ub >= 0 && ub <= 1) {
+            return new Point(x1 + ua * (x2 - x1), y1 + ua * (y2 - y1));
         }
-        //one of them is parallel to Y
-        if (this.start.getX()==this.end.getX())//this.line is parallel
-        {
-            Point cutPoint=this.oneLineParallel(other);
-
-            if ( ( cutPoint.inRange(this.start,this.end) )&& (cutPoint.inRange(other.start,other.end)))
-                return cutPoint;
-            return empty;
-
-        }
-        else// other.line os parallel
-        {
-            Point cutPoint=other.oneLineParallel(this);
-
-            if ( ( cutPoint.inRange(this.start,this.end) )&& (cutPoint.inRange(other.start,other.end)))
-                return cutPoint;
-            return empty;
-        }
-
+        return null;
     }
 
+    /**
+     * If this line does not intersect with the rectangle, return null.
+     * Otherwise, return the closest intersection point to the start of the line.
+     * @param rect the rectangle to check intersection with.
+     * @return the closest intersection point or null if no intersection.
+     */
+    public Point closestIntersectionToStartOfLine(Rectangle rect) {
+        // Get all intersection points using the method we built in Rectangle
+        java.util.List<Point> intersections = rect.intersectionPoints(this);
 
+        // If no intersections, return null
+        if (intersections.isEmpty()) {
+            return null;
+        }
+
+        // Find the point closest to the start of the line
+        Point closest = null;
+        double minDistance = Double.MAX_VALUE;
+
+        for (Point p : intersections) {
+            double dist = this.start().distance(p);
+            if (dist < minDistance) {
+                minDistance = dist;
+                closest = p;
+            }
+        }
+
+        return closest;
+    }
 
 }

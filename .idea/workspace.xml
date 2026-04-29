@@ -5,19 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0eb8252e-fd67-4df4-819a-c4e2998e2617" name="Changes" comment="first part">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/biuoop_1_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Object_Oriented_Shirel.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GeometryTester.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Line.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Point.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SimpleGuiExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/libs/biuoop-1.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Block.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Collidable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CollisionInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GameEnvironment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Paddle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Rectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Sprite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SpriteCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ball.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BallsTest1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BallsTest1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BouncingBallAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BouncingBallAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Line.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Line.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MultipleBouncingBallsAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MultipleBouncingBallsAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MultipleFramesBouncingBallsAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MultipleFramesBouncingBallsAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Velocity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Velocity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +38,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;shirelsallary&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/shirelsallary/Object_Oriented_Shirel.git&quot;,
+    &quot;accountId&quot;: &quot;2d192145-71d4-40de-9453-b37e8a0b2d00&quot;
+  }
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -51,8 +67,10 @@
     "Application.AbstractArtDrawing.executor": "Run",
     "Application.BallsTest1.executor": "Run",
     "Application.BouncingBallAnimation.executor": "Run",
+    "Application.Game.executor": "Run",
     "Application.GeometryTester.executor": "Run",
     "Application.Main.executor": "Run",
+    "Application.MultipleFramesBouncingBallsAnimation.executor": "Run",
     "Application.SimpleAnimationBall.executor": "Run",
     "Application.SimpleGuiExample.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -99,8 +117,22 @@
       <workItem from="1762962166357" duration="102000" />
       <workItem from="1762962349516" duration="1346000" />
       <workItem from="1762963918126" duration="989000" />
-      <workItem from="1762964956051" duration="28263000" />
+      <workItem from="1762964956051" duration="28412000" />
+      <workItem from="1772716049509" duration="17000" />
+      <workItem from="1773666898723" duration="1241000" />
+      <workItem from="1777208661431" duration="3203000" />
+      <workItem from="1777395461188" duration="16000" />
+      <workItem from="1777402485683" duration="5389000" />
     </task>
+    <task id="LOCAL‎-00001" summary="first part">
+      <option name="closed" value="true" />
+      <created>1763078250585</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL‎-00001" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1763078250585</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
