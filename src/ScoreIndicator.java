@@ -23,7 +23,7 @@ public class ScoreIndicator implements Sprite {
         // אין צורך בלוגיקה של זמן עבור התצוגה
     }
 
-    public void addToGame(Game g) {
+    public void addToGame(GameInterface g) {
         g.addSprite(this);
     }
 }

@@ -3,10 +3,10 @@
  * of the number of blocks that remain.
  */
 public class BlockRemover implements HitListener {
-    private Game game;
+    private GameInterface game;
     private Counter remainingBlocks;
 
-    public BlockRemover(Game game, Counter removedBlocks) {
+    public BlockRemover(GameInterface game, Counter removedBlocks) {
         this.game = game;
         this.remainingBlocks = removedBlocks;
     }

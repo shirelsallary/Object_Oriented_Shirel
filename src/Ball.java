@@ -99,11 +99,11 @@ public class Ball implements Sprite {
         this.center = this.getVelocity().applyToPoint(this.center);
     }
 
-    public void addToGame(Game g) {
+    public void addToGame(GameInterface g) {
         g.addSprite(this);
     }
 
-    public void removeFromGame(Game game) {
+    public void removeFromGame(GameInterface game) {
         game.removeSprite(this);
     }
 }

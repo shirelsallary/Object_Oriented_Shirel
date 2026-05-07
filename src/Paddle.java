@@ -69,7 +69,7 @@ public class Paddle implements Sprite, Collidable {
         return new Velocity(dx, dy);
     }
 
-    public void addToGame(Game g) {
+    public void addToGame(GameInterface g) {
         g.addSprite(this);
         g.addCollidable(this);
     }

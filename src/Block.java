@@ -51,7 +51,7 @@ public class Block implements Collidable, Sprite,HitNotifier {
     public void timePassed() {
         // To be implemented in later assignments (e.g. animations)
     }
-    public void addToGame(Game g) {
+    public void addToGame(GameInterface g) {
         g.addSprite(this);
         g.addCollidable(this);
     }
@@ -117,7 +117,7 @@ public class Block implements Collidable, Sprite,HitNotifier {
      * Removes this block from the game.
      * @param game the game to remove from.
      */
-    public void removeFromGame(Game game) {
+    public void removeFromGame(GameInterface game) {
         game.removeCollidable(this);
         game.removeSprite(this);
     }
