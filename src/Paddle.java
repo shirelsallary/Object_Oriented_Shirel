@@ -54,8 +54,19 @@ public class Paddle implements Sprite, Collidable {
 
     @Override
     public Velocity hit(Ball hitter, Point collisionPoint, Velocity currentVelocity) {
-        // היפוך פשוט של המהירות האנכית
-        return new Velocity(currentVelocity.getDx(), -currentVelocity.getDy());
+        double dx = currentVelocity.getDx();
+        double dy = currentVelocity.getDy();
+
+        // Check if hit left or right side
+        if (Math.abs(collisionPoint.getX() - rect.getUpperLeft().getX()) < 1E-10 ||
+                Math.abs(collisionPoint.getX() - (rect.getUpperLeft().getX() + rect.getWidth())) < 1E-10) {
+            dx = -dx;
+        } else {
+            // Hit top or bottom, flip dy
+            dy = -dy;
+        }
+
+        return new Velocity(dx, dy);
     }
 
     public void addToGame(Game g) {

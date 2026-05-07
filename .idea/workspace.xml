@@ -4,28 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0eb8252e-fd67-4df4-819a-c4e2998e2617" name="Changes" comment="Second part">
-      <change afterPath="$PROJECT_DIR$/src/BallRemover.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BlockRemover.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Counter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/HitListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/HitNotifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ScoreIndicator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ScoreTrackingListener.java" afterDir="false" />
+    <list default="true" id="0eb8252e-fd67-4df4-819a-c4e2998e2617" name="Changes" comment="Third part">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ball.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Block.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Collidable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Collidable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEnvironment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEnvironment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Paddle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paddle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SpriteCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SpriteCollection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Velocity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Velocity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_C:/Intellij_Projects/Object_Oriented_Shirel" value="356QtxxIw3hFTmXmtsH9hhEU9xB" />
+    </persistenceIdMap>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -61,35 +51,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.AbstractArtDrawing.executor": "Run",
-    "Application.BallsTest1.executor": "Run",
-    "Application.BouncingBallAnimation.executor": "Run",
-    "Application.Game.executor": "Run",
-    "Application.GeometryTester.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.MultipleFramesBouncingBallsAnimation.executor": "Run",
-    "Application.SimpleAnimationBall.executor": "Run",
-    "Application.SimpleGuiExample.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Intellij_Projects/Object_Oriented_Shirel/biuoop-1.4.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Intellij_Projects/Object_Oriented_Shirel/src/Main.java",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AbstractArtDrawing.executor&quot;: &quot;Run&quot;,
+    &quot;Application.BallsTest1.executor&quot;: &quot;Run&quot;,
+    &quot;Application.BouncingBallAnimation.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Game.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GeometryTester.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MultipleFramesBouncingBallsAnimation.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SimpleAnimationBall.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SimpleGuiExample.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Intellij_Projects/Object_Oriented_Shirel/biuoop-1.4.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Intellij_Projects/Object_Oriented_Shirel/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Intellij_Projects\Object_Oriented_Shirel\src\libs" />
@@ -121,7 +111,11 @@
       <workItem from="1773666898723" duration="1241000" />
       <workItem from="1777208661431" duration="3203000" />
       <workItem from="1777395461188" duration="16000" />
-      <workItem from="1777402485683" duration="8442000" />
+      <workItem from="1777402485683" duration="8857000" />
+      <workItem from="1778168101231" duration="133000" />
+      <workItem from="1778168249476" duration="216000" />
+      <workItem from="1778168501957" duration="48000" />
+      <workItem from="1778168570040" duration="643000" />
     </task>
     <task id="LOCAL‎-00001" summary="first part">
       <option name="closed" value="true" />
@@ -139,7 +133,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1777452110958</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL‎-00003" summary="Third part">
+      <option name="closed" value="true" />
+      <created>1777455008185</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL‎-00003" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1777455008185</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,7 +161,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first part" />
     <MESSAGE value="Second part" />
-    <option name="LAST_COMMIT_MESSAGE" value="Second part" />
+    <MESSAGE value="Third part" />
+    <option name="LAST_COMMIT_MESSAGE" value="Third part" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -171,5 +174,13 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
   </component>
 </project>
