@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0eb8252e-fd67-4df4-819a-c4e2998e2617" name="Changes" comment="Third part">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0eb8252e-fd67-4df4-819a-c4e2998e2617" name="Changes" comment="Implement Game Engine, Paddle, and Brick Layout (Assignment 3)&#10;&#10;- Created the Block class implementing Collidable and Sprite interfaces.&#10;- Implemented keyboard-controlled Paddle movement.&#10;- Developed the Game class to manage the animation loop and game environment.&#10;- Added logic for initializing the game level with borders and colored brick patterns.&#10;- Integrated collision detection between the ball, blocks, and paddle." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -115,7 +113,7 @@
       <workItem from="1778168101231" duration="133000" />
       <workItem from="1778168249476" duration="216000" />
       <workItem from="1778168501957" duration="48000" />
-      <workItem from="1778168570040" duration="643000" />
+      <workItem from="1778168570040" duration="953000" />
     </task>
     <task id="LOCAL‎-00001" summary="first part">
       <option name="closed" value="true" />
@@ -141,7 +139,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1777455008185</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL‎-00004" summary="Implement Game Engine, Paddle, and Brick Layout (Assignment 3)&#10;&#10;- Created the Block class implementing Collidable and Sprite interfaces.&#10;- Implemented keyboard-controlled Paddle movement.&#10;- Developed the Game class to manage the animation loop and game environment.&#10;- Added logic for initializing the game level with borders and colored brick patterns.&#10;- Integrated collision detection between the ball, blocks, and paddle.">
+      <option name="closed" value="true" />
+      <created>1778169356866</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL‎-00004" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1778169356866</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,7 +168,8 @@
     <MESSAGE value="first part" />
     <MESSAGE value="Second part" />
     <MESSAGE value="Third part" />
-    <option name="LAST_COMMIT_MESSAGE" value="Third part" />
+    <MESSAGE value="Implement Game Engine, Paddle, and Brick Layout (Assignment 3)&#10;&#10;- Created the Block class implementing Collidable and Sprite interfaces.&#10;- Implemented keyboard-controlled Paddle movement.&#10;- Developed the Game class to manage the animation loop and game environment.&#10;- Added logic for initializing the game level with borders and colored brick patterns.&#10;- Integrated collision detection between the ball, blocks, and paddle." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement Game Engine, Paddle, and Brick Layout (Assignment 3)&#10;&#10;- Created the Block class implementing Collidable and Sprite interfaces.&#10;- Implemented keyboard-controlled Paddle movement.&#10;- Developed the Game class to manage the animation loop and game environment.&#10;- Added logic for initializing the game level with borders and colored brick patterns.&#10;- Integrated collision detection between the ball, blocks, and paddle." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
