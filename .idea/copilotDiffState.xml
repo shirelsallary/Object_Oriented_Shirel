@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/src/KeyPressStoppableAnimation.java">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/KeyPressStoppableAnimation.java" />
+              <option name="updatedContent" value="import biuoop.KeyboardSensor;&#10;&#10;/**&#10; * KeyPressStoppableAnimation is a decorator that stops the animation on key press,&#10; * but only if the key was not pressed when the animation started.&#10; */&#10;public class KeyPressStoppableAnimation implements Animation {&#10;    private Animation animation;&#10;    private KeyboardSensor keyboard;&#10;    private String key;&#10;    private boolean stop;&#10;    private boolean isAlreadyPressed;&#10;&#10;    public KeyPressStoppableAnimation(KeyboardSensor keyboard, String key, Animation animation) {&#10;        this.animation = animation;&#10;        this.keyboard = keyboard;&#10;        this.key = key;&#10;        this.stop = false;&#10;        this.isAlreadyPressed = keyboard.isPressed(key);&#10;    }&#10;&#10;    @Override&#10;    public void doOneFrame(biuoop.DrawSurface d) {&#10;        this.animation.doOneFrame(d);&#10;        if (this.keyboard.isPressed(key) &amp;&amp; !this.isAlreadyPressed) {&#10;            this.stop = true;&#10;        }&#10;    }&#10;&#10;    @Override&#10;    public boolean shouldStop() {&#10;        return this.stop || this.animation.shouldStop();&#10;    }&#10;}" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

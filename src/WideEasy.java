@@ -37,7 +37,7 @@ public class WideEasy implements LevelInformation {
 
     @Override
     public Sprite getBackground() {
-        return new Block(new Rectangle(new Point(0, 0), 800, 600), Color.WHITE);
+        return new SunBackground();
     }
 
     @Override

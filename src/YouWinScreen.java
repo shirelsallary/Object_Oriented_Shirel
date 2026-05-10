@@ -20,12 +20,12 @@ public class YouWinScreen implements Animation {
         d.setColor(Color.BLACK);
         d.drawText(250, 250, "You Win!", 50);
         d.setColor(Color.WHITE);
-        d.drawText(250, 350, "Your score is " + this.score.getValue(), 30);
-        this.stop = true;
+        d.drawText(200, 350, "All levels completed. Final Score: " + this.score.getValue(), 30);
+        // Do not stop immediately, wait for key press
     }
 
     @Override
     public boolean shouldStop() {
-        return this.stop;
+        return false; // Stops via KeyPressStoppableAnimation
     }
 }

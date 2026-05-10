@@ -20,13 +20,12 @@ public class GameOverScreen implements Animation {
         d.setColor(Color.RED);
         d.drawText(250, 250, "Game Over", 50);
         d.setColor(Color.WHITE);
-        d.drawText(250, 350, "Your score is " + this.score.getValue(), 30);
-        // For simplicity, stop immediately or wait for key, but since no key, stop after one frame
-        this.stop = true;
+        d.drawText(250, 350, "Your final score is " + this.score.getValue(), 30);
+        // Do not stop immediately, wait for key press
     }
 
     @Override
     public boolean shouldStop() {
-        return this.stop;
+        return false; // Stops via KeyPressStoppableAnimation
     }
 }

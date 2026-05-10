@@ -55,7 +55,7 @@ public class GameLevel implements Animation, GameInterface {
         this.addSprite(levelInfo.getBackground());
 
         // 1. Add Score Indicator
-        ScoreIndicator scoreIndicator = new ScoreIndicator(this.score);
+        ScoreIndicator scoreIndicator = new ScoreIndicator(this.score, levelInfo.levelName());
         scoreIndicator.addToGame(this);
 
         // 2. Create Listeners

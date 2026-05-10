@@ -21,6 +21,5 @@ public class Ass4Game {
 
         gameFlow.runLevels(levels);
 
-        gui.close();
     }
 }

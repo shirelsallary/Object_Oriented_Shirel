@@ -16,7 +16,8 @@ public class GameFlow {
     }
 
     public void runLevels(List<LevelInformation> levels) {
-        for (LevelInformation levelInfo : levels) {
+        for (int i = 0; i < levels.size(); i++) {
+            LevelInformation levelInfo = levels.get(i);
             GameLevel level = new GameLevel(animationRunner.getGui(), levelInfo, score);
             level.initialize();
 
@@ -27,20 +28,21 @@ public class GameFlow {
             // Run level
             animationRunner.run(level);
 
-            if (level.isLost()) {
-                lives.decrease(1);
-                if (lives.getValue() == 0) {
-                    // Game over
-                    GameOverScreen gameOver = new GameOverScreen(score);
-                    animationRunner.run(gameOver);
-                    return;
+            if (level.isWon()) {
+                if (i < levels.size() - 1) {
+                    // Show level complete screen
+                    Animation levelComplete = new KeyPressStoppableAnimation(animationRunner.getGui().getKeyboardSensor(), biuoop.KeyboardSensor.SPACE_KEY, new LevelCompleteScreen());
+                    animationRunner.run(levelComplete);
                 }
-            } else if (level.isWon()) {
-                // Continue to next
+            } else if (level.isLost()) {
+                // Game over
+                Animation gameOver = new KeyPressStoppableAnimation(animationRunner.getGui().getKeyboardSensor(), biuoop.KeyboardSensor.SPACE_KEY, new GameOverScreen(score));
+                animationRunner.run(gameOver);
+                return;
             }
         }
         // All levels won
-        YouWinScreen youWin = new YouWinScreen(score);
+        Animation youWin = new KeyPressStoppableAnimation(animationRunner.getGui().getKeyboardSensor(), biuoop.KeyboardSensor.SPACE_KEY, new YouWinScreen(score));
         animationRunner.run(youWin);
     }
 }

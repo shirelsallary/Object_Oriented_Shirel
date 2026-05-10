@@ -36,7 +36,7 @@ public class Green3 implements LevelInformation {
 
     @Override
     public Sprite getBackground() {
-        return new Block(new Rectangle(new Point(0, 0), 800, 600), Color.GREEN);
+        return new BuildingBackground();
     }
 
     @Override
