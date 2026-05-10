@@ -4,20 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0eb8252e-fd67-4df4-819a-c4e2998e2617" name="Changes" comment="Implement Animation Engine and Multiple Level Support (Assignment 4)&#10;&#10;- Refactored Game into GameLevel using the Animation interface.&#10;- Created AnimationRunner to handle the central 60 FPS loop.&#10;- Implemented LevelInformation interface and created 5 distinct game levels.&#10;- Added GameFlow class to manage level transitions and persistent score.&#10;- Implemented PauseScreen, CountdownAnimation, and EndScreens.&#10;- Added KeyPressStoppableAnimation decorator with the logic to fix the key-press bug.">
-      <change afterPath="$PROJECT_DIR$/src/BuildingBackground.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LevelCompleteScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SunBackground.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ass4Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ass4Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FinalFour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FinalFour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameFlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameFlow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameLevel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameOverScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameOverScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Green3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Green3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ScoreIndicator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScoreIndicator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WideEasy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WideEasy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/YouWinScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/YouWinScreen.java" afterDir="false" />
+    <list default="true" id="0eb8252e-fd67-4df4-819a-c4e2998e2617" name="Changes" comment="Enhance level visuals and transition logic&#10;&#10;- Added a skyscraper background decorator for Level 3.&#10;- Added a sun background decorator for Level 2.&#10;- Updated ScoreIndicator to display the current level number.&#10;- Implemented intermediate &quot;Level Complete&quot; screens between stages.&#10;- Added final &quot;Game Completion&quot; screen after Level 5.&#10;- Adjusted Level 4 ball velocity for vertical movement challenge.">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +114,7 @@
       <workItem from="1778168101231" duration="133000" />
       <workItem from="1778168249476" duration="216000" />
       <workItem from="1778168501957" duration="48000" />
-      <workItem from="1778168570040" duration="2777000" />
+      <workItem from="1778168570040" duration="3139000" />
     </task>
     <task id="LOCAL‎-00001" summary="first part">
       <option name="closed" value="true" />
@@ -176,7 +164,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1778171142745</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL‎-00007" summary="Enhance level visuals and transition logic&#10;&#10;- Added a skyscraper background decorator for Level 3.&#10;- Added a sun background decorator for Level 2.&#10;- Updated ScoreIndicator to display the current level number.&#10;- Implemented intermediate &quot;Level Complete&quot; screens between stages.&#10;- Added final &quot;Game Completion&quot; screen after Level 5.&#10;- Adjusted Level 4 ball velocity for vertical movement challenge.">
+      <option name="closed" value="true" />
+      <created>1778437864433</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL‎-00007" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1778437864433</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,7 +196,8 @@
     <MESSAGE value="Implement Game Engine, Paddle, and Brick Layout (Assignment 3)&#10;&#10;- Created the Block class implementing Collidable and Sprite interfaces.&#10;- Implemented keyboard-controlled Paddle movement.&#10;- Developed the Game class to manage the animation loop and game environment.&#10;- Added logic for initializing the game level with borders and colored brick patterns.&#10;- Integrated collision detection between the ball, blocks, and paddle." />
     <MESSAGE value="Implement Observer Pattern: Block Removal and Score Tracking (Assignment 4)&#10;&#10;- Added HitListener and HitNotifier interfaces for event handling.&#10;- Implemented BlockRemover and BallRemover to manage object destruction.&#10;- Added Counter class and ScoreTrackingListener for game state management.&#10;- Created ScoreIndicator sprite to display current score on screen.&#10;- Updated Game class to handle winning/losing conditions based on counters." />
     <MESSAGE value="Implement Animation Engine and Multiple Level Support (Assignment 4)&#10;&#10;- Refactored Game into GameLevel using the Animation interface.&#10;- Created AnimationRunner to handle the central 60 FPS loop.&#10;- Implemented LevelInformation interface and created 5 distinct game levels.&#10;- Added GameFlow class to manage level transitions and persistent score.&#10;- Implemented PauseScreen, CountdownAnimation, and EndScreens.&#10;- Added KeyPressStoppableAnimation decorator with the logic to fix the key-press bug." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement Animation Engine and Multiple Level Support (Assignment 4)&#10;&#10;- Refactored Game into GameLevel using the Animation interface.&#10;- Created AnimationRunner to handle the central 60 FPS loop.&#10;- Implemented LevelInformation interface and created 5 distinct game levels.&#10;- Added GameFlow class to manage level transitions and persistent score.&#10;- Implemented PauseScreen, CountdownAnimation, and EndScreens.&#10;- Added KeyPressStoppableAnimation decorator with the logic to fix the key-press bug." />
+    <MESSAGE value="Enhance level visuals and transition logic&#10;&#10;- Added a skyscraper background decorator for Level 3.&#10;- Added a sun background decorator for Level 2.&#10;- Updated ScoreIndicator to display the current level number.&#10;- Implemented intermediate &quot;Level Complete&quot; screens between stages.&#10;- Added final &quot;Game Completion&quot; screen after Level 5.&#10;- Adjusted Level 4 ball velocity for vertical movement challenge." />
+    <option name="LAST_COMMIT_MESSAGE" value="Enhance level visuals and transition logic&#10;&#10;- Added a skyscraper background decorator for Level 3.&#10;- Added a sun background decorator for Level 2.&#10;- Updated ScoreIndicator to display the current level number.&#10;- Implemented intermediate &quot;Level Complete&quot; screens between stages.&#10;- Added final &quot;Game Completion&quot; screen after Level 5.&#10;- Adjusted Level 4 ball velocity for vertical movement challenge." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
